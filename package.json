@@ -12,6 +12,10 @@
 	},
 	"license": "MIT",
 	"main": "./index.js",
+	"repository": {
+		"url": "https://github.com/virtulis/preact-mjml-types",
+		"type": "git"
+	},
 	"scripts": {
 		"prepare": "npx tsc && node generate"
 	},
