@@ -9,18 +9,16 @@ const code = `// Generated with: npm run prepare
 
 declare namespace MJMLAttributes {
 
-interface Base {
-	children?: any;
-}
+	interface Base {
+		children?: any;
+	}
 ${entries.map(([tag, comp]) =>
 comp.allowedAttributes ?
 `
-interface ${ucc(tag.slice(3))} extends Base {
-		
+	interface ${ucc(tag.slice(3))} extends Base {
 ${Object.keys(comp.allowedAttributes).map(key =>
-`	'${key}'?: any;
-`).join('')}
-}
+`		'${key}'?: any;
+`).join('')}	}
 ` : ''
 ).join('')}
 
@@ -31,6 +29,7 @@ declare namespace preact {
 		export interface IntrinsicElements {
 			
 			mjml: MJMLAttributes.Base;
+			
 ${entries.map(([tag, comp]) => 
 `			'${tag}': MJMLAttributes.${comp.allowedAttributes ? `${ucc(tag.slice(3))}` : 'Base'};
 `
