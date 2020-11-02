@@ -11,6 +11,9 @@ declare namespace MJMLAttributes {
 
 	interface Base {
 		children?: any;
+		dangerouslySetInnerHTML?: {
+			__html: string;
+		};
 	}
 ${entries.map(([tag, comp]) =>
 comp.allowedAttributes ?

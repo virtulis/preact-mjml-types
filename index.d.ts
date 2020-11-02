@@ -4,6 +4,9 @@ declare namespace MJMLAttributes {
 
 	interface Base {
 		children?: any;
+		dangerouslySetInnerHTML?: {
+			__html: string;
+		};
 	}
 
 	interface Body extends Base {
